@@ -7,6 +7,7 @@ const Header = () => {
             <Link to={"/about"} style={{marginLeft:"30px",color:"white"}}>About</Link>
             <Link to={"/conatct"} style={{marginLeft:"30px",color:"white"}}>conatct</Link>
             <Link to={"/users"} style={{marginLeft:"30px",color:"white"}}>users</Link>
+            <Link to={"/posts"} style={{marginLeft:"30px",color:"white"}}>posts</Link>
         </div>
     );
 };

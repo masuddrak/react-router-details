@@ -14,10 +14,14 @@ import Wordpress from './Wordpress.jsx';
 import FullStact from './FullStact.jsx';
 import Users from './Users.jsx';
 import UserDetails from './UserDetails.jsx';
+import Posts from './Posts.jsx';
+import PostDetails from './PostDetails.jsx';
+import NotFountPage from './NotFountPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <NotFountPage />,
     children: [
       {
         path: "/conatct",
@@ -36,7 +40,18 @@ const router = createBrowserRouter([
         path: "/user/:userID",
         loader: ({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.userID}`),
         element:<UserDetails></UserDetails>
+      },
+      {
+       path:"/posts",
+       loader:()=>fetch("https://jsonplaceholder.typicode.com/posts"),
+       element:<Posts></Posts>
+      },
+      {
+        path:"/post/:postID",
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.postID}`),
+        element:<PostDetails></PostDetails>
       }
+
     ],
   },
   {
