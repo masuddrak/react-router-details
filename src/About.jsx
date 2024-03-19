@@ -1,8 +1,14 @@
+import { Outlet } from "react-router-dom";
+import AbouterHeader from "./AbouterHeader";
+
 
 const About = () => {
     return (
         <div>
-            <h1>This is a about</h1>
+           <h1>this is about</h1>
+           
+           <Outlet></Outlet>
+          
         </div>
     );
 };
